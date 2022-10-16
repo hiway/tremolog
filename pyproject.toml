@@ -1,0 +1,15 @@
+[project]
+name = "tremolog"
+version = "0.1.0"
+
+dependencies = [
+    "asgiref",
+    "click",
+    "plumbum", 
+    "pyrogram", 
+    "python-box",
+    "tgcrypto", 
+    "quart", 
+    "quart_cors", 
+    "uvloop",
+    ]

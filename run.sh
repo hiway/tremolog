@@ -1,3 +1,3 @@
 #!/bin/sh
 
-hypercorn tremolo:app
+hypercorn tremolog.tremolog:app
