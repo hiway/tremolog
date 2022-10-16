@@ -1,15 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
 [project]
 name = "tremolog"
 version = "0.1.0"
-
 dependencies = [
     "asgiref",
     "click",
-    "plumbum", 
-    "pyrogram", 
+    "plumbum",
+    "pyrogram",
     "python-box",
-    "tgcrypto", 
-    "quart", 
-    "quart_cors", 
+    "tgcrypto",
+    "quart",
+    "quart_cors",
+    "tortoise-orm[accel]",
     "uvloop",
     ]
+
+
+[project.scripts]
+tremolog = "tremolog.cli:main"

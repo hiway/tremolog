@@ -1,6 +1,6 @@
 import logging
 
-log_level: int = logging.INFO
+log_level: int = logging.DEBUG
 log_format: str = "%(asctime)-15s %(levelname)-8s %(message)s"
 log = logging.getLogger(__name__)
 log.setLevel(log_level)
