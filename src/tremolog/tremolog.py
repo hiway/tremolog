@@ -17,7 +17,7 @@ app.config["app_dir"] = Path(get_app_dir("tremolog"))
 app.config["settings_path"] = app.config["app_dir"] / "settings.db"
 app.config["database_path"] = app.config["app_dir"] / "tremolog.db"
 app.config["settings"] = load_settings(app)
-app.jinja_options['extensions'] = ['jinja2_humanize_extension.HumanizeExtension']
+app.jinja_options["extensions"] = ["jinja2_humanize_extension.HumanizeExtension"]
 
 
 telegram = None
@@ -55,5 +55,5 @@ async def index():
     app.config["settings"]["counter"] += 1
     counter = app.config["settings"]["counter"]
     asyncio.ensure_future(update_setting(app, "counter", counter))  # Save in background
-    posts = await Posts.all().order_by('-created_at').limit(10)
+    posts = await Posts.all().order_by("-created_at").limit(10)
     return await render_template("index.html", counter=counter, posts=posts, pytz=pytz)

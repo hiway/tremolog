@@ -16,9 +16,9 @@
     <p>
       {{ post.text }}
 
-      <div class="timestamp">{{post.created_at.astimezone().replace(tzinfo=None) | humanize_naturaldelta}} ago.</div>
+    <div class="timestamp">{{post.created_at.astimezone().replace(tzinfo=None) | humanize_naturaldelta}} ago.</div>
     </p>
-  </article>  
+  </article>
   {% endfor %}
 </main>
 

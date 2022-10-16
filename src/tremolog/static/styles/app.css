@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   max-width: 70ch;
   padding: 1rem 1rem;
@@ -36,7 +37,8 @@ header a {
   text-decoration: none;
 }
 
-h1,h2 {
+h1,
+h2 {
   font-weight: 300;
   margin: 0;
 }
@@ -48,7 +50,8 @@ h2 {
   margin-bottom: 1rem;
 }
 
-h3,h4 {
+h3,
+h4 {
   font-weight: 300;
   margin: 0;
 }
@@ -61,11 +64,14 @@ h4 {
   font-size: .8rem;
 }
 
-h5,h6 {
+h5,
+h6 {
   margin: 1em 0 1rem;
 }
 
-p,ul,ol {
+p,
+ul,
+ol {
   margin-bottom: 1rem;
   font-family: sans-serif;
 }

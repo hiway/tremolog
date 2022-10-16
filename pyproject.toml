@@ -17,7 +17,7 @@ dependencies = [
     "quart_cors",
     "tortoise-orm[accel]",
     "uvloop",
-    ]
+]
 
 
 [project.scripts]

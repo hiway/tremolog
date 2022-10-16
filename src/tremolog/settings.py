@@ -7,30 +7,33 @@ from box import Box
 
 from . import log
 
+
 def load_settings(app):
     """Return a dictionary of settings from the settings database."""
     path = app.config["settings_path"]
     if not path.exists():
         return {}
     settings = {}
-    with dbm.open(str(path), 'c') as db:
+    with dbm.open(str(path), "c") as db:
         for key in db.keys():
-            settings[key.decode('utf-8')] = json.loads(db[key].decode('utf-8'))  # type: ignore
+            settings[key.decode("utf-8")] = json.loads(db[key].decode("utf-8"))  # type: ignore
     return Box(settings)
+
 
 def save_settings(app):
     """Save the settings to the settings database."""
     path = app.config["settings_path"]
     settings = app.config["settings"]
     path.parent.mkdir(parents=True, exist_ok=True)
-    with dbm.open(str(path), 'c') as db:
+    with dbm.open(str(path), "c") as db:
         for key, value in settings.items():
-            db[key.encode('utf-8')] = json.dumps(value).encode('utf-8')
+            db[key.encode("utf-8")] = json.dumps(value).encode("utf-8")
+
 
 @sync_to_async
 def update_setting(app, key, value):
     """Update a single setting in the settings database."""
     path = app.config["settings_path"]
     path.parent.mkdir(parents=True, exist_ok=True)
-    with dbm.open(str(path), 'c') as db:
-        db[key.encode('utf-8')] = json.dumps(value).encode('utf-8')
+    with dbm.open(str(path), "c") as db:
+        db[key.encode("utf-8")] = json.dumps(value).encode("utf-8")

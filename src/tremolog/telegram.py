@@ -61,9 +61,7 @@ class TelegramAgent(object):
         )
 
         @tg.on_message(
-            filters.command(["start"])
-            & filters.private
-            & filters.user(self.bot_admin)
+            filters.command(["start"]) & filters.private & filters.user(self.bot_admin)
         )
         async def welcome(client, message):
             log.debug(f"Telegram client: received text message: {message.text}")
@@ -72,17 +70,12 @@ class TelegramAgent(object):
                 "Send text messages, voice notes or photos to this chat, "
                 "and they will be showcased on your website."
             )
-        
-        @tg.on_message(
-            filters.private
-            & filters.user(self.bot_admin)
-        )
+
+        @tg.on_message(filters.private & filters.user(self.bot_admin))
         async def echo(client, message):
             log.debug(f"Telegram client: received text message: {message.text}")
             try:
-                await Posts.create(
-                    text=message.text
-                )
+                await Posts.create(text=message.text)
                 await message.reply(f"Published: {message.text}")
             except Exception as e:
                 log.error(f"Error: {e}")
