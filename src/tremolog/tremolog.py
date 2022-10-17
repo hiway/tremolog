@@ -27,8 +27,6 @@ telegram = None
 async def load_settings_before_serving():
     await init(f"sqlite://{app.config['database_path']}")
     print(f"Database initialized at {app.config['database_path']}")
-    posts = await Posts.all()
-    print(posts)
     if not app.config["settings"].get("counter"):
         app.config["settings"]["counter"] = 0
     if app.config["settings"].get("telegram"):
