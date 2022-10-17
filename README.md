@@ -12,7 +12,7 @@ Micro:blog via Telegram Bot
 
 ## Install
 
-Clone the git repo and install the dependencies:
+Clone the git repo:
 
 ```bash
 git clone https://github.com/hiway/tremolog.git
