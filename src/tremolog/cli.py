@@ -29,7 +29,9 @@ def login(api_id, api_hash, bot_token, bot_admin):
         "bot_admin": bot_admin,
     }
     save_settings(app)
-    click.echo("Telegram login configured")
+    click.echo("Telegram login configured, settings saved.")
+    click.echo(f"{app.config['settings_path']}")
+    click.echo("You can now run: $ ./run.sh")
 
 
 if __name__ == "__main__":
