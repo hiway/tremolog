@@ -17,7 +17,7 @@ Clone the git repo and install the dependencies:
 ```bash
 git clone https://github.com/hiway/tremolog.git
 cd tremolog
-``
+```
 
 Create virtual environment for python3
 
